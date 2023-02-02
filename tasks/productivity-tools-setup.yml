@@ -15,7 +15,8 @@
     - productivity
 
 - name: Install pandoc
-  shell: sudo dpkg -i pandoc-2.19.2-1-amd64.deb
+  become: true
+  shell: dpkg -i pandoc-2.19.2-1-amd64.deb
   tags:
     - install
     - productivity
