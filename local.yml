@@ -1,4 +1,8 @@
 - hosts: localhost  
   tasks:
-    - include: tasks/core_setup.yml
-    - include: tasks/nvim_setup.yml
+    - include: tasks/core-setup.yml
+    - include: tasks/nvim-setup.yml
+    - include: tasks/productivity-tools-setup.yml
+    - include: tasks/git-setup.yml
+    - include: tasks/i3-setup.yml
+    - include: tasks/dotfiles.yml
