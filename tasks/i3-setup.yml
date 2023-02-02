@@ -1,17 +1,17 @@
-- name: Install System Packages 4 (i3, dconf-editor, pavucontrol, ubuntu-mate-desktop)
-  become: true
-  apt:
-    name: [ "i3", "dconf-editor", "pavucontrol"]
-  tags: "{{ i3_tags }}"
-
-- name: dconf i3
-  shell: dconf-editor write /org/mate/desktop/session/required-components/windowmanager "'i3'"
-  tags: "{{ i3_tags }}"
-
-- name: dconf i3
-  shell: dconf-editor write /org/mate/desktop/background/show-desktop-icons "false"
-  tags: "{{ i3_tags }}"
-
+#- name: Install System Packages 4 (i3, dconf-editor, pavucontrol, ubuntu-mate-desktop)
+#  become: true
+#  apt:
+#    name: [ "i3", "dconf-editor", "pavucontrol"]
+#  tags: "{{ i3_tags }}"
+#
+#- name: dconf i3
+#  shell: dconf-editor write /org/mate/desktop/session/required-components/windowmanager "'i3'"
+#  tags: "{{ i3_tags }}"
+#
+#- name: dconf i3
+#  shell: dconf-editor write /org/mate/desktop/background/show-desktop-icons "false"
+#  tags: "{{ i3_tags }}"
+#
 - name: i3 dependencies
   become: true
   apt:
@@ -26,7 +26,7 @@
 - name: Clone picom
   ansible.builtin.git:
     repo: 'https://github.com/yshui/picom.git'
-    dest: "{{ picom_dir }}"
+    dest: "{{ picom_dir }}/picom"
     recursive: yes
     update: yes
     version: v10.2
