@@ -1,12 +1,6 @@
 # ansible
-Used to setup coding env in linux
+Used to setup coding env on ubuntu machine
 
-If not linux (apt not available)
-Install:
-cmake
-glibtools (brew install libtools)
-
-before running nvim_setup.yml
-
-To run setup:
-ansible-playbook local.yml --verbose -K
+1. `apt install ansible`
+2. `apt install git`
+3. `ansible-playbook local.yml --verbose -K`
