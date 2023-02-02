@@ -16,7 +16,7 @@
 
 - name: Install pandoc
   become: true
-  shell: dpkg -i pandoc-2.19.2-1-amd64.deb
+  shell: dpkg -i {{ lookup('env', 'HOME') }}/pandoc-2.19.2-1-amd64.deb
   tags:
     - install
     - productivity
