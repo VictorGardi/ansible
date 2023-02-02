@@ -18,6 +18,6 @@
     - include: tasks/productivity-tools-setup.yml
     - include: tasks/git-setup.yml
     - include: tasks/i3-setup.yml
-    - include: tasks/brighntess-control-setup.yml
+    - include: tasks/brightness-control-setup.yml
     - include: tasks/bluetooth-setup.yml
     - include: tasks/dotfiles.yml
