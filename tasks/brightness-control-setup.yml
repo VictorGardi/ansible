@@ -1,0 +1,5 @@
+- name: install brightness-controller 
+  become: true 
+  shell: add-apt-repository ppa:apandada1/brightness-controller && apt update && apt install brightness-controller -y
+  tags:
+    - install
