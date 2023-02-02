@@ -34,7 +34,7 @@
 
 - name: Build and install picom
   become: true
-  shell: cd "{{ picom_dir }}" &&  meson --buildtype=release . build && ninja -C build install
+  shell: meson --buildtype=release . build && ninja -C build install
   args:
     chdir: "{{ picom_dir }}"
   tags: "{{ i3_tags }}"
