@@ -1,5 +1,5 @@
-- name: install brightness-controller 
+- name: install bluetooth dependencies 
   become: true 
-  shell: add-apt-repository ppa:apandada1/brightness-controller && apt update && apt install brightness-controller
+  shell: sudo apt install bluez bluez-tools -y  && sudo apt install blueman -y 
   tags:
     - install
