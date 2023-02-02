@@ -26,7 +26,7 @@
 - name: Clone picom
   ansible.builtin.git:
     repo: 'https://github.com/yshui/picom.git'
-    dest: "{{ picom_dir }}/picom"
+    dest: "{{ picom_dir }}"
     recursive: yes
     update: yes
     version: v10.2
@@ -34,7 +34,7 @@
 
 - name: Build and install picom
   become: true
-  shell: meson --buildtype=release . build && ninja -C build install
+  shell: cd "{{ picom_dir }}" &&  meson --buildtype=release . build && ninja -C build install
   args:
     chdir: "{{ picom_dir }}"
   tags: "{{ i3_tags }}"
