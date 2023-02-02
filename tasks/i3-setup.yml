@@ -37,4 +37,5 @@
   shell: meson --buildtype=release . build && ninja -C build install
   args:
     chdir: "{{ picom_dir }}"
+  ignore_errors: yes
   tags: "{{ i3_tags }}"
