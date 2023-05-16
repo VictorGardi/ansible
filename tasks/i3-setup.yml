@@ -40,3 +40,28 @@
     chdir: "{{ picom_dir }}"
   ignore_errors: yes
   tags: "{{ i3_tags }}"
+
+- name: install polybar 
+  become: true
+  apt:
+    name: [ "polybar" ]
+  tags: "{{ i3_tags }}"
+
+- name: install i3-resurrect
+  pip:
+    name:
+      - i3-resurrect 
+  tags: "{{ i3_tags }}"
+
+- name: install playerctl
+  become: true
+  shell: wget http://ftp.nl.debian.org/debian/pool/main/p/playerctl/libplayerctl2_2.0.1-1_amd64.deb && wget http://ftp.nl.debian.org/debian/pool/main/p/playerctl/playerctl_2.0.1-1_amd64.deb && sudo dpkg -i libplayerctl2_2.0.1-1_amd64.deb playerctl_2.0.1-1_amd64.deb 
+  args:
+    chdir: "{{ lookup('env', 'HOME') }}"
+  tags: "{{ i3_tags }}"
+
+- name: install bluetooth dependencies 
+  become: true 
+  shell: sudo apt install bluez bluez-tools -y  && sudo apt install blueman -y 
+  tags:
+    - install

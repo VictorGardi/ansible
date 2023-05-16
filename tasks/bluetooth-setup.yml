@@ -1,5 +1,0 @@
-- name: install bluetooth dependencies 
-  become: true 
-  shell: sudo apt install bluez bluez-tools -y  && sudo apt install blueman -y 
-  tags:
-    - install
